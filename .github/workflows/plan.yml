@@ -28,10 +28,10 @@ jobs:
         uses: ./.github/plan
         with:
           terraform_directory: "terraform"
-          terraform_user_ocid: ${{ env.TF_USER_OCID }}
-          terraform_tenant_ocid: ${{ env.TF_TENANCY_OCID }}
-          terraform_key_privatekey: ${{ env.TF_PRIVATE_KEY }}
-          terraform_key_fingerprint: ${{ env.TF_FINGERPRINT }}
+          terraform_user_ocid: ${{ secrets.TF_USER_OCID }}
+          terraform_tenant_ocid: ${{ secrets.TF_TENANCY_OCID }}
+          terraform_key_privatekey: ${{ secrets.TF_PRIVATE_KEY }}
+          terraform_key_fingerprint: ${{ secrets.TF_FINGERPRINT }}
           terraform_version: ${{ env.TERRAFORM_VERSION }}
           tfcloud_api_token: ${{ secrets.TF_API_TOKEN }}
           github_token: ${{ secrets.GH_TOKEN }}
