@@ -1,8 +1,12 @@
 name: Terraform Apply
 
 on:
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    types:
+      - closed
+  
+  #pull_request_review:
+  #  types: [submitted]
 
 env:
   TERRAFORM_VERSION: "1.2.9"
