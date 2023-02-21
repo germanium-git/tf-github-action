@@ -1,8 +1,13 @@
 name: Terraform Apply
 
+#on:
+#  pull_request_review:
+#    types: [submitted]
+
 on:
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    types:
+      - closed
 
 env:
   TERRAFORM_VERSION: "1.2.9"
@@ -12,7 +17,8 @@ jobs:
   terraform_apply:
     runs-on: ubuntu-latest
     environment: test
-    if: github.event.review.state == 'approved'
+    #if: github.event.review.state == 'approved'
+    if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v3
 
