@@ -34,6 +34,6 @@ jobs:
           terraform_key_fingerprint: ${{ secrets.TF_FINGERPRINT }}
           terraform_version: ${{ env.TERRAFORM_VERSION }}
           tfcloud_api_token: ${{ secrets.TF_API_TOKEN }}
-          terraform_compartment_id: ${{ secrets.TF_COMPARTMENT_ID }}
+          terraform_compartment_ocid: ${{ secrets.TF_COMPARTMENT_OCID }}
           github_token: ${{ secrets.GH_TOKEN }}
           pr_id: ${{ steps.pr-id.outputs.PR_NUMBER }}
