@@ -19,8 +19,8 @@ inputs:
   tfcloud_api_token:
     description: 'TF Cloud API token for remote statefile'
     required: true
-  terraform_compartment_id:
-    description: 'Oracle Compartment Id'
+  terraform_compartment_ocid:
+    description: 'Oracle Compartment OCID'
     required: true
   terraform_version:
     description: 'Terraform Version'
@@ -64,7 +64,7 @@ runs:
         TF_VAR_TENANCY_OCID: ${{ inputs.terraform_tenant_ocid }}
         TF_VAR_PRIVATE_KEY: ${{ inputs.terraform_key_privatekey }}
         TF_VAR_FINGERPRINT: ${{ inputs.terraform_key_fingerprint }}
-        TF_VAR_COMPARTMENT_ID: ${{ inputs.terraform_compartment_id }}
+        TF_VAR_COMPARTMENT_OCID: ${{ inputs.terraform_compartment_ocid }}
         
 
     - name: Save Artifact
