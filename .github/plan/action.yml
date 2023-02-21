@@ -39,7 +39,7 @@ runs:
       with:
         terraform_version: ${{ inputs.terraform_version }}
         terraform_wrapper: false
-        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+        cli_config_credentials_token: ${{ inputs.tfcloud_api_token }}
 
     - name: Terraform Init
       id: init
@@ -47,6 +47,8 @@ runs:
       shell: bash
       run: |
         terraform init
+      env:
+        TF_TOKEN_app_terraform_io: ${{ inputs.tfcloud_api_token }}
 
     - name: Terraform Plan
       id: plan
