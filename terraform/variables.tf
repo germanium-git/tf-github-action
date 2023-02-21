@@ -17,3 +17,8 @@ variable "PRIVATE_KEY" {
   description = "OCI API key private key"
   type = string
 }
+
+variable "COMPARTMENT_OCID" {
+  description = "Test Compartment for GitHub Action"
+  type = string
+}
