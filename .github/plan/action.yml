@@ -35,7 +35,7 @@ runs:
   using: "composite"
   steps:
     - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
+      uses: hashicorp/setup-terraform@v2
       with:
         terraform_version: ${{ inputs.terraform_version }}
         terraform_wrapper: false
@@ -47,8 +47,6 @@ runs:
       shell: bash
       run: |
         terraform init
-      env:
-        TF_TOKEN_app_terraform_io: ${{ inputs.tfcloud_api_token }}
 
     - name: Terraform Plan
       id: plan
